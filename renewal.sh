@@ -16,7 +16,7 @@ certbot certificates -d $domain |grep -E 'VALID: 1 days|VALID: 2 days|VALID: 3 d
 if [ $? -eq 0 ]
 then
 # Generowanie certyfikatu
-  certbot certonly --standalone -d $domain --non-interactive --agree-tos --email alarmy@dataspace.pl --force-renewal
+  certbot certonly --standalone -d $domain --non-interactive --agree-tos --email alarmy@infracore.pl --force-renewal
 #Przenoszenie certyfikatu
   cp /etc/letsencrypt/live/"$domain"/fullchain.pem /etc/pve/nodes/node-01/pveproxy-ssl.pem
   cp /etc/letsencrypt/live/"$domain"/privkey.pem /etc/pve/nodes/node-01/pveproxy-ssl.key
